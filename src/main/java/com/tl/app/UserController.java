@@ -21,4 +21,12 @@ public class UserController {
         User user = userMapper.findUserByName("kaka");
         return user.getName()+"-----"+user.getAge();
     }
+
+    @RequestMapping(value = "/kaka")
+    @ResponseBody
+    public String kaka(){
+        User user = userMapper.findUserById(new Integer(1));
+        return user.getId()+"-----"+user.getName();
+    }
+
 }
